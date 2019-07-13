@@ -53,10 +53,10 @@ namespace Treehouse.FitnessFrog.Controllers
         public ActionResult Add(Entry entry)
         {
             if (ModelState.IsValid)
-            {
+            {         
                 _entriesRepository.AddEntry(entry);
 
-                // return to the list entries page
+                return RedirectToAction("Index");
             }
 
             return View(entry);
